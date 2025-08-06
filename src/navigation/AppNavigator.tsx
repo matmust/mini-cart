@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { RootStackParamList } from '../types';
-import { ProductListScreen } from '../screens';
+import { ProductDetailScreen, ProductListScreen } from '../screens';
 import { CartHeaderButton } from '../components';
 import { colors } from '../constants';
 
@@ -30,6 +30,13 @@ const AppNavigator: React.FC = () => {
         component={ProductListScreen}
         options={{
           title: 'Products',
+        }}
+      />
+      <Stack.Screen
+        name='ProductDetail'
+        component={ProductDetailScreen}
+        options={{
+          title: 'Product Details',
         }}
       />
     </Stack.Navigator>

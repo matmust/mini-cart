@@ -12,3 +12,8 @@ export type ProductListScreenProps = StackScreenProps<
   RootStackParamList,
   'ProductList'
 >;
+
+export type ProductDetailScreenProps = StackScreenProps<
+  RootStackParamList,
+  'ProductDetail'
+>;
