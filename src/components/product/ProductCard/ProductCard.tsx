@@ -1,7 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './ProductCard.styles';
-import { Card, Image, Button, Badge, Icon, QuantitySelector } from '../../common';
+import {
+  Card,
+  Image,
+  Button,
+  Badge,
+  Icon,
+  QuantitySelector,
+} from '../../common';
 import { useCart, useCartFeedback } from '../../../hooks';
 import { CartFeedback } from '../../cart';
 import { calculateDiscountedPrice, formatPrice } from '../../../utils';

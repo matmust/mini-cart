@@ -1,14 +1,9 @@
 import React from 'react';
-import { View, TouchableOpacity} from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { styles } from './Card.styles';
 import { CardProps } from '../../../types';
 
-const Card: React.FC<CardProps> = ({
-  children,
-  onPress,
-  style,
-  testID,
-}) => {
+const Card: React.FC<CardProps> = ({ children, onPress, style, testID }) => {
   const cardStyle = [styles.card, style];
 
   if (onPress) {

@@ -69,13 +69,31 @@ const CartFeedback: React.FC<CartFeedbackProps> = ({
   const getIcon = () => {
     switch (action) {
       case 'added':
-        return <Icon name='check' color='#28a745' size={24} testID='icon-added' />;
+        return (
+          <Icon name='check' color='#28a745' size={24} testID='icon-added' />
+        );
       case 'removed':
-        return <Icon name='trash' color='#a5a5a5ff' size={24} testID='icon-removed' />;
+        return (
+          <Icon
+            name='trash'
+            color='#a5a5a5ff'
+            size={24}
+            testID='icon-removed'
+          />
+        );
       case 'updated':
-        return <Icon name='rotate' color='#007bff' size={24} testID='icon-updated' />;
+        return (
+          <Icon name='rotate' color='#007bff' size={24} testID='icon-updated' />
+        );
       default:
-        return <Icon name='cart-shopping' color='#6c757d' size={24} testID='icon-default' />;
+        return (
+          <Icon
+            name='cart-shopping'
+            color='#6c757d'
+            size={24}
+            testID='icon-default'
+          />
+        );
     }
   };
 

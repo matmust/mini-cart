@@ -3,7 +3,6 @@ import { Alert } from 'react-native';
 import { useCart } from './useCart';
 import { Product, CartFeedbackAction } from '../types';
 
-
 interface UseCartFeedbackReturn {
   message: string | null;
   showFeedback: boolean;

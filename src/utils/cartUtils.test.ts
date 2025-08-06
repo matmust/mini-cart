@@ -136,7 +136,8 @@ describe('cartUtils', () => {
     it('should handle decimal prices and discounts', () => {
       expect(calculateDiscountedPrice(99.99, 15)).toBe('$84.99');
       expect(calculateDiscountedPrice(19.95, 20)).toBe('$15.96');
-    });1
+    });
+    1;
   });
 
   describe('calculateTotalSavings', () => {

@@ -11,7 +11,6 @@ const Stack = createStackNavigator<RootStackParamList>();
 const renderCartHeaderButton = () => <CartHeaderButton />;
 
 const AppNavigator: React.FC = () => {
-
   return (
     <Stack.Navigator
       initialRouteName='ProductList'
