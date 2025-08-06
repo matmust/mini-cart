@@ -20,3 +20,10 @@ export interface CartContextValue {
   clearCart: () => void;
   getItemQuantity: (productId: number) => number;
 }
+
+export type CartAction =
+  | { type: 'ADD_ITEM'; payload: Product }
+  | { type: 'REMOVE_ITEM'; payload: number }
+  | { type: 'INCREASE_QUANTITY'; payload: Product }
+  | { type: 'DECREASE_QUANTITY'; payload: Product }
+  | { type: 'CLEAR_CART' };
