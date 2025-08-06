@@ -18,3 +18,8 @@ export interface ProductsResponse {
   skip: number;
   limit: number;
 }
+
+export interface ProductCardProps {
+  product: Product;
+  onPress: (product: Product) => void;
+}
