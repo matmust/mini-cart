@@ -1,22 +1,15 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity} from 'react-native';
 import { styles } from './Card.styles';
-import { BaseComponentProps } from '../../../types';
-
-interface CardProps extends BaseComponentProps {
-  children: React.ReactNode;
-  onPress?: () => void;
-  elevated?: boolean;
-}
+import { CardProps } from '../../../types';
 
 const Card: React.FC<CardProps> = ({
   children,
   onPress,
-  elevated = true,
   style,
   testID,
 }) => {
-  const cardStyle = [styles.card, elevated && styles.elevated, style];
+  const cardStyle = [styles.card, style];
 
   if (onPress) {
     return (

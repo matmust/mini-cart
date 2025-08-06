@@ -39,7 +39,6 @@ export interface ImageProps extends BaseComponentProps {
 export interface CardProps extends BaseComponentProps {
   children: React.ReactNode;
   onPress?: () => void;
-  elevated?: boolean;
 }
 
 export interface BadgeProps extends BaseComponentProps {

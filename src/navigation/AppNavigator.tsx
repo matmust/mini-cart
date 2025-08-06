@@ -8,6 +8,8 @@ import { colors } from '../constants';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
+const renderCartHeaderButton = () => <CartHeaderButton />;
+
 const AppNavigator: React.FC = () => {
 
   return (
@@ -21,7 +23,7 @@ const AppNavigator: React.FC = () => {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
-        headerRight: () => <CartHeaderButton />,
+        headerRight: renderCartHeaderButton,
       }}
     >
       <Stack.Screen
