@@ -27,3 +27,5 @@ export type CartAction =
   | { type: 'INCREASE_QUANTITY'; payload: Product }
   | { type: 'DECREASE_QUANTITY'; payload: Product }
   | { type: 'CLEAR_CART' };
+
+export type CartFeedbackAction = 'added' | 'removed' | 'updated' | 'error';
