@@ -1,15 +1,14 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { RootStackParamList } from '../types';
-import { ProductDetailScreen, ProductListScreen } from '../screens';
+import { CartScreen, ProductDetailScreen, ProductListScreen } from '../screens';
 import { CartHeaderButton } from '../components';
 import { colors } from '../constants';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 const AppNavigator: React.FC = () => {
-  const headerRightComponent = useCallback(() => <CartHeaderButton />, []);
 
   return (
     <Stack.Navigator
@@ -22,7 +21,7 @@ const AppNavigator: React.FC = () => {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
-        headerRight: headerRightComponent,
+        headerRight: () => <CartHeaderButton />,
       }}
     >
       <Stack.Screen
@@ -37,6 +36,14 @@ const AppNavigator: React.FC = () => {
         component={ProductDetailScreen}
         options={{
           title: 'Product Details',
+        }}
+      />
+      <Stack.Screen
+        name='Cart'
+        component={CartScreen}
+        options={{
+          title: 'Shopping Cart',
+          headerRight: undefined,
         }}
       />
     </Stack.Navigator>

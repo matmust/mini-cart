@@ -17,3 +17,11 @@ export type ProductDetailScreenProps = StackScreenProps<
   RootStackParamList,
   'ProductDetail'
 >;
+
+export type CartScreenProps = StackScreenProps<RootStackParamList, 'Cart'>;
+
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends RootStackParamList {}
+  }
+}
