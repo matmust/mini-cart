@@ -13,3 +13,12 @@ export const calculateCartTotal = (items: CartItem[]): number => {
   const total = items.reduce((sum, item) => sum + calculateItemTotal(item), 0);
   return Math.round(total * 100) / 100;
 };
+
+export const formatPrice = (price: number): string => `$${price.toFixed(2)}`;
+
+export const calculateDiscountedPrice = (
+  price: number,
+  discount: number,
+): string => {
+  return formatPrice(price * (1 - discount / 100));
+};

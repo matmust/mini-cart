@@ -1,6 +1,8 @@
 import {
   calculateItemTotal,
   calculateCartTotal,
+  formatPrice,
+  calculateDiscountedPrice,
 } from './cartUtils';
 import { CartItem, Product } from '../types';
 
@@ -107,5 +109,31 @@ describe('cartUtils', () => {
       ];
       expect(calculateCartTotal(items)).toBe(220);
     });
+  });
+
+  describe('formatPrice', () => {
+    it('should format prices with two decimal places', () => {
+      expect(formatPrice(100)).toBe('$100.00');
+      expect(formatPrice(99.99)).toBe('$99.99');
+      expect(formatPrice(0)).toBe('$0.00');
+    });
+
+    it('should handle whole numbers correctly', () => {
+      expect(formatPrice(50)).toBe('$50.00');
+      expect(formatPrice(1)).toBe('$1.00');
+    });
+  });
+
+  describe('calculateDiscountedPrice', () => {
+    it('should calculate discounted prices correctly', () => {
+      expect(calculateDiscountedPrice(100, 10)).toBe('$90.00');
+      expect(calculateDiscountedPrice(100, 25)).toBe('$75.00');
+      expect(calculateDiscountedPrice(100, 50)).toBe('$50.00');
+    });
+
+    it('should handle decimal prices and discounts', () => {
+      expect(calculateDiscountedPrice(99.99, 15)).toBe('$84.99');
+      expect(calculateDiscountedPrice(19.95, 20)).toBe('$15.96');
+    });1
   });
 });
