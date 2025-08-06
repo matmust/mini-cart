@@ -1,0 +1,42 @@
+import React from 'react';
+import { View, TouchableOpacity } from 'react-native';
+import { styles } from './Card.styles';
+import { BaseComponentProps } from '../../../types';
+
+interface CardProps extends BaseComponentProps {
+  children: React.ReactNode;
+  onPress?: () => void;
+  elevated?: boolean;
+}
+
+const Card: React.FC<CardProps> = ({
+  children,
+  onPress,
+  elevated = true,
+  style,
+  testID,
+}) => {
+  const cardStyle = [styles.card, elevated && styles.elevated, style];
+
+  if (onPress) {
+    return (
+      <TouchableOpacity
+        style={cardStyle}
+        onPress={onPress}
+        testID={testID}
+        accessibilityRole='button'
+        activeOpacity={0.7}
+      >
+        {children}
+      </TouchableOpacity>
+    );
+  }
+
+  return (
+    <View style={cardStyle} testID={testID}>
+      {children}
+    </View>
+  );
+};
+
+export default Card;
