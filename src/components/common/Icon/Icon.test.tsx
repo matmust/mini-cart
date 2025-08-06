@@ -5,7 +5,9 @@ import { colors } from '../../../constants';
 
 jest.mock('react-native-vector-icons/FontAwesome6', () => {
   const MockFontAwesome6 = ({ testID, ...props }: any) => {
-    return <div testID={testID} {...props} />;
+    const ReactLib = require('react');
+    const { Text } = require('react-native');
+    return ReactLib.createElement(Text, { testID, ...props });
   };
   return MockFontAwesome6;
 });
