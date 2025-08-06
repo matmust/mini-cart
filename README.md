@@ -1,97 +1,131 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# MiniCart - React Native E-commerce Prototype
+
+A sample e-commerce application built with React Native and TypeScript, providing a mobile shopping experience with core functionality for product Browse, detailed product views, and cart management.
+
+## 📁 Project Structure
+
+```
+src/                         # Source code
+├── components/              # Reusable UI components
+│   ├── cart/                # Cart-related components
+│   ├── common/              # Common UI components (button, card, etc.)
+│   └── product/             # Product-related components
+├── constants/               # App constants (colors, fonts, spacing)
+├── context/                 # React Context providers and reducers
+├── hooks/                   # Custom React hooks
+├── navigation/              # Navigation configuration
+├── screens/                 # Screen components
+│   ├── CartScreen/          # Shopping cart screen
+│   ├── ProductDetailScreen/ # Product detail screen
+│   └── ProductListScreen/   # Product list screen
+├── services/                # API services and utilities
+├── types/                   # TypeScript type definitions
+└── utils/                   # Utility functions
+```
+
+## 🛠 Technology Stack
+
+- **React Native**: 0.80.2
+- **TypeScript**: 5.0.4
+- **React Navigation**: 7.x (Stack Navigator)
+- **Context API**: For state management
+- **DummyJSON API**: Product data source
+- **Jest**: Testing framework
+- **React Native Testing Library**: Component testing
+- **ESLint + Prettier**: Code formatting and linting
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js**: >= 18.0.0
+- **npm** or **yarn**
+- **Android Studio** (for Android development)
+- **Xcode** (for iOS development on macOS)
+- **Ruby**: >= 2.6.10 (for iOS CocoaPods)
 
 # Getting Started
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+### 1. Install Dependencies
 
-## Step 1: Start Metro
+First, install the project dependencies:
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
+```bash
+# Install Node.js dependencies
+npm install
 
 # OR using Yarn
+yarn install
+```
+
+### 2. Android Setup
+
+For Android development, ensure you have:
+
+1. **Android Studio** installed with Android SDK
+2. **Android SDK Build-Tools** and **Android SDK Platform-Tools**
+3. **Android Virtual Device (AVD)** configured or a physical device connected
+4. **ANDROID_HOME** environment variable set
+5. **Enable USB debugging** on your Android device (if using physical device)
+
+### 3. iOS Setup (macOS only)
+
+For iOS development, install CocoaPods dependencies:
+
+```bash
+# Install Ruby gems (only needed once)
+bundle install
+
+# Install iOS dependencies
+cd ios && bundle exec pod install && cd ..
+```
+
+### 4. Start Metro Server
+
+Start the Metro bundler:
+
+```bash
+npm start
+# OR
 yarn start
 ```
 
-## Step 2: Build and run your app
+### 5. Run the Application
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+In a new terminal window, run the app on your preferred platform:
 
-### Android
-
-```sh
-# Using npm
+#### Android
+```bash
 npm run android
-
-# OR using Yarn
+# OR
 yarn android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+#### iOS (macOS only)
+```bash
 npm run ios
-
-# OR using Yarn
+# OR
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🧪 Additional Scripts
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```bash
+# Run tests with coverage
+npm test
 
-## Step 3: Modify your app
+# Run tests in watch mode
+npm run test:watch
 
-Now that you have successfully run the app, let's make changes!
+# Type checking
+npm run type-check
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+# Lint code
+npm run lint
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+# Format code
+npm run format
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+# Check formatting
+npm run format:check
+```
